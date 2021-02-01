@@ -152,7 +152,7 @@ img {
 @media screen and (max-width: 768px) {
   .nav__menu {
     position: fixed;
-    top: var(--header-height);
+    top: -100%;
     left: 0;
     width: 100%;
     padding: 1.5rem 0 1rem;
@@ -162,7 +162,6 @@ img {
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
     border-radius: 0 0 1rem 1rem;
     z-index: var(--z-fixed);
-    display: none;
   }
 }
 
@@ -192,6 +191,21 @@ img {
 .nav__toggle {
   font-size: 1.3rem;
   cursor: pointer;
+}
+
+/* Show menu */
+.show-menu {
+  top: var(--header-height);
+}
+
+/* Active menu */
+.active-link {
+  color: var(--first-color);
+}
+
+/* Change background header */
+.scroll-header {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 /* Scroll top */
