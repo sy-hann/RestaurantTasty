@@ -1,6 +1,6 @@
 'use strict';
 
-// Show Menu
+// 1. Show Menu
 const showMenu = (toggleId, navId) => {
     const toggle = document.getElementById(toggleId),
     nav = document.getElementById(navId);
@@ -15,7 +15,7 @@ const showMenu = (toggleId, navId) => {
 }
 showMenu('nav-toggle', 'nav-menu');
 
-// Remove Menu mobile
+// 2. Remove Menu mobile
 const navLink = document.querySelectorAll('.nav__link');
 
 function linkAction(){
@@ -25,7 +25,7 @@ function linkAction(){
 }
 navLink.forEach(n => n.addEventListener('click', linkAction));
 
-// Scroll sections active link
+// 3. Scroll sections active link
 const sections = document.querySelectorAll('section[id]')
 
 function scrollActive() {
@@ -46,7 +46,7 @@ function scrollActive() {
 window.addEventListener('scroll', scrollActive)
 
 
-// Change Background Header
+// 4. Change Background Header
 function scrollHeader() {
     const nav = document.getElementById('header')
     // When the scroll is greater than 150 viewport height, 
@@ -57,7 +57,7 @@ function scrollHeader() {
 window.addEventListener('scroll',scrollHeader)
 
 
-// Show Scroll Top
+// 5. Show Scroll Top
 function scrollTop(){
     const scrollTop = document.getElementById('scroll-top');
     // When the scroll is higher than 560 viewport height, add the show-scroll class 
@@ -69,7 +69,7 @@ window.addEventListener('scroll', scrollTop);
 
 
 // =============================================================
-// Dark Light Theme
+// 6. Dark Light Theme
 const themeButton = document.getElementById('theme-button');
 const darkTheme = 'dark-theme';
 const iconTheme = 'bx-sun';
@@ -101,4 +101,22 @@ themeButton.addEventListener('click', ()=>{
     localStorage.setItem('selected-theme', getCurrentTheme())
     localStorage.setItem('selected-icon', getCurrentIcon())
 
+})
+
+
+// 7. Scroll Reveal animation
+const sr = ScrollReveal({
+    origin : 'top',
+    distance: '30px',
+    duration: 2000,
+    rest: true
+});
+
+sr.reveal(`.home__data, .home__img,
+        .about__data, .about__img,
+        .services__content, .menu__content,
+        .app__data, .app__img,
+        .contact__data, .contact__button,
+        .footer__content`,{
+    interval: 200
 })
