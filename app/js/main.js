@@ -60,8 +60,7 @@ window.addEventListener('scroll',scrollHeader)
 // 5. Show Scroll Top
 function scrollTop(){
     const scrollTop = document.getElementById('scroll-top');
-    // When the scroll is higher than 560 viewport height, add the show-scroll class 
-    //to the a tag with the scroll-top class
+    // When the scroll is higher than 560 viewport height, add the show-scroll class to the a tag with the scroll-top class
     if(this.scrollY >= 560) scrollTop.classList.add('scroll-top'); else scrollTop.classList.remove('scroll-top');
 }
 
@@ -84,8 +83,7 @@ const getCurrentIcon = () => themeButton.classList.contains(iconTheme) ? 'bx-moo
 
 // Validate if the user previously chose a topic
 if(selectedTheme){
-    // If the validation is fulfilled, we ask what the issue was to know if we activated
-    // or deactivated the dark
+    // If the validation is fulfilled, we ask what the issue was to know if we activated or deactivated the dark
     document.body.classList[selectedTheme === 'dark' ? 'add' : 'remove'](darkTheme)
     themeButton.classList[selectedIcon === 'bx-moon' ? 'add' : 'remove'](iconTheme)
 }
@@ -96,27 +94,25 @@ themeButton.addEventListener('click', ()=>{
     document.body.classList.toggle(darkTheme)
     themeButton.classList.toggle(iconTheme)
 
-    // Save the theme and the current icon that the user chose
-    // Even after reloading
+    // Save the theme and the current icon that the user chose (Even after reloading)
     localStorage.setItem('selected-theme', getCurrentTheme())
     localStorage.setItem('selected-icon', getCurrentIcon())
 
 })
-
 
 // 7. Scroll Reveal animation
 const sr = ScrollReveal({
     origin : 'top',
     distance: '30px',
     duration: 2000,
-    rest: true
+    reset: true
 });
 
 sr.reveal(`.home__data, .home__img,
-        .about__data, .about__img,
-        .services__content, .menu__content,
-        .app__data, .app__img,
-        .contact__data, .contact__button,
-        .footer__content`,{
+            .about__data, .about__img,
+            .services__content, .menu__content,
+            .app__data, .app__img,
+            .contact__data, .contact__button,
+            .footer__content`, {
     interval: 200
 })

@@ -352,10 +352,13 @@ img {
   border-radius: 0.5rem;
   box-shadow: 0 2px 4px rgba(3, 74, 40, 0.15);
   padding: 0.75rem;
+}
+
+.menu__container > div {
   transition: all 150ms ease-in-out;
 }
 
-.menu__content:hover {
+.menu__container > div:hover {
   transform: scale(1.05);
 }
 
