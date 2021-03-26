@@ -469,13 +469,7 @@ img {
   text-align: center;
   font-size: var(--small-font-size);
   color: var(--text-color-light);
-  margin-top: 3.5rem;
-}
-
-.footer .name {
-  text-align: center;
-  font-size: var(--smaller-font-size);
-  color: var(--text-color-light);
+  margin-top: 3rem;
 }
 
 /* Media Queries */
